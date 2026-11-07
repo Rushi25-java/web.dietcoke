@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diet Coke — Taste The Feeling</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #080808;
+    color: white;
+    overflow-x: hidden;
+}
+
+:root {
+    --red: #ed1c32;
+    --silver: #d5d7dc;
+    --dark: #080808;
+}
+
+nav {
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    border-bottom: 1px solid #ffffff18;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-btn {
+    padding: 12px 23px;
+    border: 1px solid #ffffff50;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    background: white;
+    color: black;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 130px 10% 70px;
+    position: relative;
+    overflow: hidden;
+    background:
+    radial-gradient(ellipse at 75% 50%, #28282b 0%, transparent 50%),
+    linear-gradient(110deg, #080808, #151518);
+}
+
+.hero::before {
+    content: "DIET";
+    position: absolute;
+    font-size: 25vw;
+    font-weight: 900;
+    color: #ffffff04;
+    right: -3%;
+    top: 20%;
+    letter-spacing: -20px;
+}
+
+.hero-content {
+    max-width: 550px;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-size: 12px;
+    letter-spacing: 5px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 9vw, 120px);
+    line-height: .85;
+    letter-spacing: -9px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: var(--red);
+    display: block;
+}
+
+.hero p {
+    color: #999;
+    line-height: 1.8;
+    font-size: 14px;
+    max-width: 390px;
+    margin: 30px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.real-can {
+    width: 300px;
+    height: 500px;
+    object-fit: contain;
+    filter: drop-shadow(20px 25px 30px #000);
+    animation: float 4s ease-in-out infinite;
+}
+
+.product-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin: 10px auto 25px;
+    filter: drop-shadow(12px 16px 18px #0008);
+}
+
+.primary-btn {
+    background: var(--red);
+    padding: 16px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    background: white;
+    color: black;
+    transform: translateY(-4px);
+}
+
+.secondary-btn {
+    border: 1px solid #555;
+    padding: 16px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.hero-product {
+    position: absolute;
+    right: 13%;
+    top: 17%;
+    width: 300px;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-20px) rotate(-4deg); }
+}
+
+.hero-number {
+    position: absolute;
+    bottom: 40px;
+    right: 9%;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* INTRO */
+
+.intro {
+    padding: 120px 10%;
+    text-align: center;
+    background: #f0f0f0;
+    color: #111;
+}
+
+.intro h2 {
+    font-size: clamp(35px, 6vw, 75px);
+    font-weight: 900;
+    letter-spacing: -4px;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1;
+}
+
+.intro h2 span {
+    color: var(--red);
+}
+
+.intro p {
+    max-width: 500px;
+    margin: 25px auto 0;
+    color: #666;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* FEATURES */
+
+.features {
+    padding: 110px 10%;
+    background: #101012;
+}
+
+.section-label {
+    color: var(--red);
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(35px, 5vw, 60px);
+    letter-spacing: -3px;
+    margin: 20px 0 55px;
+}
+
+.floating-image {
+    width: 1000px;
+    height: auto;
+    object-fit: contain;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, #202024, #111113);
+    border: 1px solid #ffffff12;
+    padding: 40px 30px;
+    min-height: 230px;
+    transition: .4s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--red);
+}
+
+.feature-icon {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.feature-card h3 {
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* PRODUCT */
+
+.product-section {
+    padding: 110px 10%;
+    background: #080808;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    padding: 30px;
+    background: #151518;
+    text-align: center;
+    border: 1px solid #ffffff12;
+    transition: .3s;
+}
+
+.product-card:hover {
+    border-color: var(--red);
+    transform: translateY(-8px);
+}
+
+.product-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.7;
+}
+
+/* CTA */
+
+.cta {
+    background: var(--red);
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: clamp(40px, 7vw, 85px);
+    letter-spacing: -5px;
+    font-weight: 900;
+}
+
+.cta p {
+    margin: 20px 0 30px;
+    font-size: 14px;
+}
+
+.cta a {
+    display: inline-block;
+    padding: 15px 35px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.cta a:hover {
+    background: black;
+    color: white;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 45px 10%;
+    background: #080808;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer p {
+    color: #666;
+    font-size: 11px;
+}
+
+footer a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+    nav {
+        padding: 0 6%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 950px;
+        align-items: flex-start;
+        padding: 170px 7% 50px;
+    }
+
+    .hero h1 {
+        font-size: 75px;
+        letter-spacing: -5px;
+    }
+
+    .hero-product {
+        top: 440px;
+        right: 50%;
+        transform: translateX(50%);
+        scale: .75;
+    }
+
+    .hero-number {
+        display: none;
+    }
+
+    .feature-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro, .features, .product-section {
+        padding: 80px 7%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">DIET<span>.</span> COKE</div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#features">Features</a>
+        <a href="#products">Products</a>
+    </div>
+
+    <a class="nav-btn" href="#products">EXPLORE</a>
+</nav>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <div class="eyebrow">THE ICONIC ORIGINAL</div>
+
+        <h1>
+            TASTE
+            <span>THE</span>
+            DIFFERENCE.
+        </h1>
+
+        <p>
+            Bold personality. Iconic silver.
+            Discover the Diet Coke brand experience
+            through a fresh, modern perspective.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#story" class="primary-btn">DISCOVER MORE ↗</a>
+            <a href="#products" class="secondary-btn">EXPLORE COLLECTION</a>
+        </div>
+    </div>
+
+<div class="hero-product">
+    <img
+        src="images/diet-coke-main.png"
+        alt="Diet Coke silver can"
+        class="real-can"
+    >
+</div>
+    <div class="hero-number">EST. 1982 — AN ICONIC BRAND</div>
+
+</section>
+
+<section class="intro" id="story">
+    <div class="section-label">A CLASSIC REIMAGINED</div>
+
+    <h2>
+        NOT JUST A DRINK.
+        <span>AN ICON.</span>
+    </h2>
+
+    <p>
+        Since its introduction in 1982, Diet Coke has
+        built an unmistakable identity through its
+        iconic silver look and distinctive brand style.
+    </p>
+</section>
+
+<section class="features" id="features">
+
+    <div class="section-label">THE DIET COKE EXPERIENCE</div>
+
+    <h2 class="section-title">WHAT MAKES IT ICONIC?</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">✦</div>
+            <h3>Iconic Identity</h3>
+            <p>
+                An instantly recognizable silver design
+                that has become part of pop culture.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">◈</div>
+            <h3>Distinctive Style</h3>
+            <p>
+                A bold brand personality with a timeless
+                visual identity.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">◎</div>
+            <h3>Made to Stand Out</h3>
+            <p>
+                A unique place in beverage branding
+                and contemporary culture.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="product-section" id="products">
+
+    <div class="section-label">DISCOVER THE RANGE</div>
+
+    <h2 class="section-title">THE COLLECTION.</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="images/diet-coke-original.png" alt="Original Diet Coke can" class="product-image">
+            <h3>Original</h3>
+            <p>The classic Diet Coke identity.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="images/diet-coke-mini.png" alt="Diet Coke mini can" class="product-image">
+            <h3>Mini</h3>
+            <p>A smaller format of the iconic design.</p>
+        </div>
+
+        <div class="product-card">
+            <img src="images/diet-coke-classic.png" alt="Diet Coke classic silver can" class="product-image">
+            <h3>Classic Silver</h3>
+            <p>The unmistakable signature look.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="cta">
+    <h2>STAY ICONIC.</h2>
+    <p>Discover the world of Diet Coke.</p>
+    <a href="#home">BACK TO TOP ↑</a>
+</section>
+
+<footer>
+    <div class="logo">DIET<span>.</span> COKE</div>
+    <p>© 2026 Concept Website. Unofficial design concept.</p>
+    <a href="#home">BACK TO HOME ↑</a>
+</footer>
+
+</body>
+</html>
